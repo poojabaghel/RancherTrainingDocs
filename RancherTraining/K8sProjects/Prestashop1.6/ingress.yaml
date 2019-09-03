@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prestashop16
+  annotations:
+    http.port: "80"
+spec:
+  rules:
+  - host: ps6-gcerancher.com
+    http:
+      paths:
+      - backend:
+          serviceName: prestashop16
+          servicePort: 80

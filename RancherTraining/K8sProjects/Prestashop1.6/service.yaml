@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: prestashop16
+spec:
+  selector:
+    app: prestashop16
+  ports:
+    - name: main
+      protocol: TCP
+      port: 80
+      targetPort: 80
+

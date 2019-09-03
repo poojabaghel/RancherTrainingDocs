@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: phpmyadmin
+  annotations:
+    http.port: "80"
+spec:
+  rules:
+  - host: phpmyadmin.devrancherbox.com
+    http:
+      paths:
+      - backend:
+          serviceName: phpmyadmin
+          servicePort: 80

@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wp-522
+  annotations:
+    http.port: "80"
+spec:
+  rules:
+  - host: wp5.devrancherbox.com
+    http:
+      paths:
+      - backend:
+          serviceName: wp-522
+          servicePort: 80

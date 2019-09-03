@@ -1,0 +1,28 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: wp-522
+  labels:
+    app: wp-522
+spec:
+  selector:
+    matchLabels:
+      app: wp-522
+  template:
+    metadata:
+      labels:
+        app: wp-522
+    spec:
+      volumes:
+      - name: wp522-storage
+        persistentVolumeClaim:
+          claimName: wp522-pv-claim
+      containers:
+      - image: wordpress:5.2.2
+        name: wp-522
+        ports:
+        - containerPort: 80
+          name: wp-522
+        volumeMounts:
+        - name: wp522-storage
+          mountPath: /var/www/html/

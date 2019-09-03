@@ -1,0 +1,22 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: prestashop16
+  labels:
+    app: prestashop16
+spec:
+  selector:
+    matchLabels:
+      app: prestashop16
+  template:
+    metadata:
+      labels:
+        app: prestashop16
+    spec:
+      containers:
+      - image: prestashop/prestashop:1.6
+        name: prestashop16
+        ports:
+        - containerPort: 80
+          name: prestashop16
+

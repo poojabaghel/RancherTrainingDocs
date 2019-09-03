@@ -1,0 +1,18 @@
+stages:
+- name: Publish image prestashop16
+  steps:
+  - publishImageConfig:
+      buildContext: .
+      tag: prestashop16:${CICD_EXECUTION_SEQUENCE}
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./rancher-deploy.yaml
+    when:
+    branch:
+      include:
+      - feature*
+
+branch:
+  include:
+  - feature*
