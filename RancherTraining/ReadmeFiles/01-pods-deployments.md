@@ -219,11 +219,7 @@ $ kubectl get pods
 NAME                     READY     STATUS    RESTARTS   AGE
 standalone-busybox-pod   1/1       Running   0          30s
 $
-```
 
-PS. Praqma has an excellent multitool for network (and container) troubleshooting. It is called praqma/network-multitool, and it runs nginx web server, eliminating a need to pass any custom commands. You can run it like this:
-
-```
 $ kubectl run multitool --image praqma/network-multitool
 ```
 
